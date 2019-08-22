@@ -1,0 +1,12 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+    - functions
+    - deploy
+    - cicdtest
+    - --runtime=nodejs8
+    - --region=asia-northeast1
+    - --entry-point=helloPubSub
+    - --trigger-topic=cicdtest
+    - --set-env-vars
+    - TZ=Asia/Tokyo
